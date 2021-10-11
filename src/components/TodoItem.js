@@ -18,8 +18,7 @@ const Remove = styled.div`
 const TodoItemBlock = styled.div`
   display: flex;
   align-items: center;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 12px 0;
   &:hover {
     ${Remove} {
       display: initial;
@@ -32,6 +31,7 @@ const CheckCircle = styled.div`
   height: 32px;
   border-radius: 16px;
   border: 1px solid #ced4da;
+  color: #e5e5e5;
   font-size: 24px;
   display: flex;
   align-items: center;
@@ -66,7 +66,7 @@ function TodoItem({ id, done, text }) {
   return (
     <TodoItemBlock>
       <CheckCircle done={done} onClick={onToggle}>
-        {done && <MdDone />}
+        <MdDone />
       </CheckCircle>
       <Text done={done}>{text}</Text>
       <Remove onClick={onRemove}>
